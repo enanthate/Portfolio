@@ -25,7 +25,6 @@ This project was created as part of a laboratory assignment for Tambov State Tec
 - Scripts are embedded in `<script>` for handling logic.
 
 ## Live Demo / Демонстрация
-[Сюда вставь ссылку на твой сайт, когда задеплоишь его, например: https://enanth4te.github.io/resume/]
 
 ## Author / Автор
 **Nikulin Zakhar**
