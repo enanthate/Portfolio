@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Никулин Захар - Резюме</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            transition: background-color 0.5s, color 0.5s;
+            line-height: 1.6;
+        }
+        body.light {
+            background-color: #f4f4f4;
+            color: #121212;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        body.light header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+        body.light nav a {
+            color: #121212;
+        }
+        nav a:hover {
+            color: #bb86fc;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #bb86fc;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #9955e8;
+        }
+        section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .slogan {
+            font-size: 20px;
+            color: #bb86fc;
+            margin-bottom: 30px;
+        }
+        .typing-text {
+            font-size: 24px;
+            border-right: 2px solid #bb86fc;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.7s step-end infinite;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #bb86fc;
+            display: inline-block;
+        }
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        body.light .card {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact-link {
+            display: block;
+            color: #bb86fc;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Z.Nikulin</div>
+    <nav>
+        <a href="#about" id="nav-about">Обо мне</a>
+        <a href="#experience" id="nav-exp">Опыт</a>
+        <a href="#portfolio" id="nav-portfolio">Портфолио</a>
+        <a href="#contacts" id="nav-contacts">Контакты</a>
+    </nav>
+    <div class="controls">
+        <button onclick="changeLang()" id="lang-btn">EN</button>
+        <button onclick="toggleTheme()" id="theme-btn">Light</button>
+    </div>
+</header>
+
+<section id="hero">
+    <h1 id="hero-name">Никулин Захар</h1>
+    <div class="slogan" id="hero-slogan">Минимальное вложение усилий - максимальный полученный результат</div>
+    <div class="typing-text" id="typing"></div>
+</section>
+
+<section id="about">
+    <h2 id="about-title">Обо мне</h2>
+    <div class="card">
+        <p id="about-text">Студент 1 курса ТГТУ, направление "Информатика и вычислительная техника". Увлекаюсь программированием, изучаю основы алгоритмов и стремлюсь к эффективному решению задач.</p>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 id="exp-title">Опыт</h2>
+    <div class="card">
+        <h3 id="exp1-title">Учебные проекты</h3>
+        <p id="exp1-desc">Выполнение лабораторных работ по программированию, работа с базовыми структурами данных.</p>
+    </div>
+    <div class="card">
+        <h3 id="exp2-title">Самообразование</h3>
+        <p id="exp2-desc">Изучение основ веб-разработки (HTML, CSS, JavaScript) и алгоритмических языков.</p>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2 id="port-title">Портфолио</h2>
+    <div class="card">
+        <h3 id="port1-title">Лабораторная работа №1</h3>
+        <p id="port1-desc">Создание одностраничного сайта-резюме с использованием HTML, CSS и JS.</p>
+    </div>
+    <div class="card">
+        <h3 id="port2-title">Консольный калькулятор</h3>
+        <p id="port2-desc">Программа для базовых математических операций, написанная на C++.</p>
+    </div>
+</section>
+
+<section id="contacts">
+    <h2 id="cont-title">Контакты</h2>
+    <div class="card" style="text-align: center;">
+        <a href="mailto:nzmstspecial@gmail.com" class="contact-link">nzmstspecial@gmail.com</a>
+        <a href="https://t.me/enanth4te" class="contact-link" target="_blank">Telegram: @enanth4te</a>
+    </div>
+</section>
+
+<script>
+    let currentLang = 'ru';
+    let isDark = true;
+
+    const texts = {
+        ru: {
+            navAbout: 'Обо мне',
+            navExp: 'Опыт',
+            navPortfolio: 'Портфолио',
+            navContacts: 'Контакты',
+            heroSlogan: 'Минимальное вложение усилий - максимальный полученный результат',
+            aboutTitle: 'Обо мне',
+            aboutText: 'Студент 1 курса ТГТУ, направление "Информатика и вычислительная техника". Увлекаюсь программированием, изучаю основы алгоритмов и стремлюсь к эффективному решению задач.',
+            expTitle: 'Опыт',
+            exp1Title: 'Учебные проекты',
+            exp1Desc: 'Выполнение лабораторных работ по программированию, работа с базовыми структурами данных.',
+            exp2Title: 'Самообразование',
+            exp2Desc: 'Изучение основ веб-разработки (HTML, CSS, JavaScript) и алгоритмических языков.',
+            portTitle: 'Портфолио',
+            port1Title: 'Лабораторная работа №1',
+            port1Desc: 'Создание одностраничного сайта-резюме с использованием HTML, CSS и JS.',
+            port2Title: 'Консольный калькулятор',
+            port2Desc: 'Программа для базовых математических операций, написанная на C++.',
+            contTitle: 'Контакты',
+            langBtn: 'EN',
+            themeBtn: 'Light'
+        },
+        en: {
+            navAbout: 'About',
+            navExp: 'Experience',
+            navPortfolio: 'Portfolio',
+            navContacts: 'Contacts',
+            heroSlogan: 'Minimum effort - maximum result',
+            aboutTitle: 'About Me',
+            aboutText: '1st-year student at TSTU, majoring in Informatics and Computational Technology. Interested in programming, learning algorithm basics and striving for efficient problem solving.',
+            expTitle: 'Experience',
+            exp1Title: 'Academic Projects',
+            exp1Desc: 'Completion of programming lab assignments, working with basic data structures.',
+            exp2Title: 'Self-education',
+            exp2Desc: 'Learning web development basics (HTML, CSS, JavaScript) and algorithmic languages.',
+            portTitle: 'Portfolio',
+            port1Title: 'Lab Assignment #1',
+            port1Desc: 'Creation of a one-page resume website using HTML, CSS, and JS.',
+            port2Title: 'Console Calculator',
+            port2Desc: 'Program for basic mathematical operations written in C++.',
+            contTitle: 'Contacts',
+            langBtn: 'RU',
+            themeBtn: 'Dark'
+        }
+    };
+
+    function changeLang() {
+        currentLang = currentLang === 'ru' ? 'en' : 'ru';
+        let t = texts[currentLang];
+        document.getElementById('nav-about').innerText = t.navAbout;
+        document.getElementById('nav-exp').innerText = t.navExp;
+        document.getElementById('nav-portfolio').innerText = t.navPortfolio;
+        document.getElementById('nav-contacts').innerText = t.navContacts;
+        document.getElementById('hero-slogan').innerText = t.heroSlogan;
+        document.getElementById('about-title').innerText = t.aboutTitle;
+        document.getElementById('about-text').innerText = t.aboutText;
+        document.getElementById('exp-title').innerText = t.expTitle;
+        document.getElementById('exp1-title').innerText = t.exp1Title;
+        document.getElementById('exp1-desc').innerText = t.exp1Desc;
+        document.getElementById('exp2-title').innerText = t.exp2Title;
+        document.getElementById('exp2-desc').innerText = t.exp2Desc;
+        document.getElementById('port-title').innerText = t.portTitle;
+        document.getElementById('port1-title').innerText = t.port1Title;
+        document.getElementById('port1-desc').innerText = t.port1Desc;
+        document.getElementById('port2-title').innerText = t.port2Title;
+        document.getElementById('port2-desc').innerText = t.port2Desc;
+        document.getElementById('cont-title').innerText = t.contTitle;
+        document.getElementById('lang-btn').innerText = t.langBtn;
+        document.getElementById('theme-btn').innerText = t.themeBtn;
+    }
+
+    function toggleTheme() {
+        isDark = !isDark;
+        if (isDark) {
+            document.body.classList.remove('light');
+        } else {
+            document.body.classList.add('light');
+        }
+        let t = texts[currentLang];
+        document.getElementById('theme-btn').innerText = isDark ? t.themeBtn : (currentLang === 'ru' ? 'Light' : 'Dark');
+    }
+
+    const words = ["Студент ТГТУ", "Будущий миллиардер", "3100 часов в DoTA 2", "Мне нравятся блондинки"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById('typing');
+
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            typingElement.innerText = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingElement.innerText = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        typeEffect();
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
